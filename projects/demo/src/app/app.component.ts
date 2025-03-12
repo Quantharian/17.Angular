@@ -14,10 +14,9 @@ import { MenuComponent } from './components/menu/menu.component';
     <main>
       <p>1</p>
       <p>2</p>
+      <router-outlet />
     </main>
     <cas-footer />
-
-    <router-outlet />
   `,
   styles: [],
 })

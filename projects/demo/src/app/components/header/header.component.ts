@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { MenuComponent } from '../menu/menu.component';
 
 @Component({
   selector: 'cas-header',
   imports: [],
-  template: ` <header>
-    <h1>Welcome to {{ title }}!</h1>
-    <ng-content></ng-content>
-  </header>`,
+  template: `
+    <header>
+      <h1>Welcome {{ title }}!</h1>
+      <ng-content></ng-content>
+    </header>
+  `,
   styles: `
     :host {
       display: block;
@@ -15,7 +16,7 @@ import { MenuComponent } from '../menu/menu.component';
   `,
 })
 export class HeaderComponent {
-  title = 'hell';
+  title = 'demo';
   constructor() {
     console.log(this.title);
   }
