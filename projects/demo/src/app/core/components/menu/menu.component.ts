@@ -1,34 +1,38 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
-type MenuItem = {
+interface MenuItem {
   path: string;
   label: string;
-};
+}
 
 @Component({
   selector: 'cas-menu',
-  imports: [],
+  imports: [RouterModule],
   template: `
     <nav>
       <ul>
         @for (item of items; track item.path) {
-        <li>
-          <a [href]="item.path">{{ item.label }}</a>
-        </li>
-        } @if (isLogin) {
-        <li>
-          <a [href]="'/profile'">Profile</a>
-        </li>
-        <li>
-          <a [href]="'/logout'">Logout</a>
-        </li>
+          <li>
+            <a [routerLink]="item.path" routerLinkActive="active">{{
+              item.label
+            }}</a>
+          </li>
+        }
+        @if (isLogin) {
+          <li>
+            <a [routerLink]="'/profile'">Profile</a>
+          </li>
+          <li>
+            <a [routerLink]="'/logout'">Logout</a>
+          </li>
         } @else {
-        <li>
-          <a [href]="'/login'">Login</a>
-        </li>
-        <li>
-          <a [href]="'/register'">Register</a>
-        </li>
+          <li>
+            <a [routerLink]="'/login'">Login</a>
+          </li>
+          <li>
+            <a [routerLink]="'/register'">Register</a>
+          </li>
         }
       </ul>
     </nav>
@@ -54,24 +58,25 @@ type MenuItem = {
       color: white;
       text-decoration: none;
     }
+    .active {
+      font-weight: bold;
+      transform: scale(1.2);
+    }
   `,
 })
 export class MenuComponent {
   items: MenuItem[];
-  isLogin: boolean = false;
+  isLogin = false;
   constructor() {
     this.items = [
       {
-        path: '/',
+        path: '/home',
         label: 'Home',
       },
+      { path: '/films', label: 'Films' },
       {
         path: '/about',
         label: 'About',
-      },
-      {
-        path: '/contact',
-        label: 'Contact',
       },
     ];
   }
