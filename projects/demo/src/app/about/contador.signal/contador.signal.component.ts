@@ -1,18 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'cas-counter',
+  selector: 'cas-counter-signal',
   imports: [CommonModule],
   template: `
-    <h3>Counter</h3>
+    <h3>Counter Signal</h3>
     <div>
-      <button (click)="changeCount(+1)" [disabled]="counter >= 5">➕</button>
-      <output [ngClass]="{ negative: counter < 0 }">{{ counter }}</output>
-      <button (click)="changeCount(-1)" [disabled]="counter <= -5">➖</button>
+      <button (click)="changeCount(+1)" [disabled]="counter() >= 5">➕</button>
+      <output [ngClass]="{ negative: counter() < 0 }">{{ counter() }}</output>
+      <button (click)="changeCount(-1)" [disabled]="counter() <= -5">➖</button>
     </div>
-    <p *ngIf="counter === 5" class="max-message">Maximum value reached!</p>
-    <p *ngIf="counter === -5" class="min-message">Minimum value reached!</p>
+    <p *ngIf="counter() === 5" class="max-message">Maximum value reached!</p>
+    <p *ngIf="counter() === -5" class="min-message">Minimum value reached!</p>
   `,
   styles: `
     :host {
@@ -46,13 +46,11 @@ import { CommonModule } from '@angular/common';
     }
   `,
 })
-export class CounterComponent {
-  counter = 0;
+export class CounterSignalComponent {
+  counter = signal(0);
 
-  changeCount(amount: number) {
-    const newCount = this.counter + amount;
-    if (newCount <= 5 && newCount >= -5) {
-      this.counter = newCount;
-    }
+  changeCount(value: number) {
+    // this.counter.set(this.counter() + value);
+    this.counter.update((prev) => prev + value);
   }
 }

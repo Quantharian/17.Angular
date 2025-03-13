@@ -11,7 +11,14 @@ import { FormsModule } from '@angular/forms';
       <p>Hola {{ name ? name : 'amigo' }}!</p>
     </div>
   `,
-  styles: [],
+  styles: `
+    :host {
+      display: block;
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+  `,
 })
 export class GreetingComponent {
   @Input() name = '';

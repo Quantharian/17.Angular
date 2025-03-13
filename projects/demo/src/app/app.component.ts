@@ -1,8 +1,15 @@
+/* eslint-disable @typescript-eslint/consistent-type-definitions */
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './core/components/header/header.component';
 import { FooterComponent } from './core/components/footer/footer.component';
 import { MenuComponent } from './core/components/menu/menu.component';
+// import { routes } from '../app/app.routes';
+
+export type MenuItem = {
+  path: string;
+  label: string;
+};
 
 @Component({
   selector: 'cas-root',
@@ -18,10 +25,21 @@ import { MenuComponent } from './core/components/menu/menu.component';
     <cas-footer />
   `,
   styles: [
-    `main {
-      margin: 3rem,
-    },
-  `,
+    `
+      main {
+        margin: 3rem;
+      }
+    `,
   ],
 })
-export class AppComponent {}
+export class AppComponent {
+  routes: MenuItem[] = this.setRoutes();
+  private setRoutes() {
+    return routes
+      .filter((route) => route.path && route.path !== '**')
+      .map((route) => ({
+        path: route.path!,
+        label: route.data!['label'] as string,
+      }));
+  }
+}

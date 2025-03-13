@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
+import { LogoComponent } from '../logo/logo.component';
 
 @Component({
   selector: 'cas-header',
-  imports: [],
+  imports: [LogoComponent],
   template: `
+    <cas-logo />
     <header>
+      <!-- <img src="../assets/logo.svg" alt="logo" /> -->
       <h1>Welcome {{ title }}!</h1>
       <ng-content></ng-content>
     </header>

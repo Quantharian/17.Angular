@@ -1,10 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { RouterModule } from '@angular/router';
-
-interface MenuItem {
-  path: string;
-  label: string;
-}
+import { MenuItem } from '../../../app.component';
 
 @Component({
   selector: 'cas-menu',
@@ -12,7 +8,7 @@ interface MenuItem {
   template: `
     <nav>
       <ul>
-        @for (item of items; track item.path) {
+        @for (item of items(); track item.path) {
           <li>
             <a [routerLink]="item.path" routerLinkActive="active">{{
               item.label
@@ -58,6 +54,9 @@ interface MenuItem {
       color: white;
       text-decoration: none;
     }
+    a:hover {
+      text-decoration: underline;
+    }
     .active {
       font-weight: bold;
       transform: scale(1.2);
@@ -65,19 +64,6 @@ interface MenuItem {
   `,
 })
 export class MenuComponent {
-  items: MenuItem[];
-  isLogin = false;
-  constructor() {
-    this.items = [
-      {
-        path: '/home',
-        label: 'Home',
-      },
-      { path: '/films', label: 'Films' },
-      {
-        path: '/about',
-        label: 'About',
-      },
-    ];
-  }
+  items = input<MenuItem[]>();
+  isLogin = false; // This should be set based on your authentication logic
 }
