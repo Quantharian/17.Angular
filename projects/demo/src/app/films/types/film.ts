@@ -1,12 +1,11 @@
-/* eslint-disable @typescript-eslint/consistent-type-definitions */
 export type Film = {
   id: string;
   title: string;
-  description: string;
+  description?: string;
   releaseYear: number;
-  rating: number;
-  director: string;
-  duration: number;
-  poster: string;
-  categories: string;
+  rating?: number;
+  director?: string;
+  duration?: number;
+  poster?: string;
+  categories?: string[];
 };
