@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { RegisterComponent } from '../user/register/register.component';
-import { LoginComponent } from '../user/login/login.component';
+import { RegisterComponent } from '../user/components/register/register.component';
+import { LoginComponent } from '../user/components/login/login.component';
 import { TimeService } from '../core/services/time.service';
 
 @Component({

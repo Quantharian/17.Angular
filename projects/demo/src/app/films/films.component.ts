@@ -4,8 +4,8 @@ import { TimeService } from '../core/services/time.service';
 
 @Component({
   selector: 'cas-films',
-  providers: [TimeService],
   imports: [ListComponent],
+  providers: [TimeService],
   template: `
     <h2>Films</h2>
     <cas-list></cas-list>
@@ -17,4 +17,5 @@ import { TimeService } from '../core/services/time.service';
 export default class FilmsComponent {
   timeService = inject(TimeService);
   time = new Date().toLocaleTimeString();
+  // constructor(private timeService: TimeService) {}
 }

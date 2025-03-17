@@ -1,6 +1,7 @@
-import { Component, input, OnInit, output } from '@angular/core';
+import { Component, inject, input, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Film } from '../../types/film';
+import { StateService } from '../../services/state.service';
 
 @Component({
   selector: 'cas-add-edit',
@@ -44,11 +45,8 @@ export class AddEditComponent implements OnInit {
   });
 
   filmData!: Film;
-
   isAdding = input.required<boolean>();
-
-  addEvent = output<Film>();
-  editEvent = output<Film>();
+  filmsState = inject(StateService);
 
   ngOnInit(): void {
     this.filmData = structuredClone(this.film());
@@ -56,10 +54,11 @@ export class AddEditComponent implements OnInit {
 
   sendEvent() {
     if (this.isAdding()) {
-      this.film().id = crypto.randomUUID();
-      this.addEvent.emit({ ...this.filmData });
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { id, ...rest } = this.filmData;
+      this.filmsState.addFilm(rest);
     } else {
-      this.editEvent.emit({ ...this.filmData });
+      this.filmsState.updateFilm({ ...this.filmData });
     }
   }
 }

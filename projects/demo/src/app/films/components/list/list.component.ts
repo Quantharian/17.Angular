@@ -1,24 +1,19 @@
 import { Component, inject } from '@angular/core';
 import { AddEditComponent } from '../add.edit/add.edit.component';
 import { FilmComponent } from '../film/film.component';
-import { Film } from '../../types/film';
-import { RepoService } from '../../services/repo.service';
+import { StateService } from '../../services/state.service';
 
 @Component({
   selector: 'cas-list',
   imports: [AddEditComponent, FilmComponent],
   template: `
-    <cas-add-edit [isAdding]="true" (addEvent)="addFilm($event)"></cas-add-edit>
+    <cas-add-edit [isAdding]="true"></cas-add-edit>
     <h3>Listado de películas</h3>
     <ul>
-      @for (film of films; track film.id) {
+      @for (film of films(); track film.id) {
         <li>
-          <cas-film [film]="film" (eventDelete)="deleteFilm($event)">
-            <cas-add-edit
-              [isAdding]="false"
-              [film]="film"
-              (editEvent)="updateFilm($event)"
-            ></cas-add-edit>
+          <cas-film [film]="film">
+            <cas-add-edit [isAdding]="false" [film]="film"></cas-add-edit>
           </cas-film>
         </li>
       }
@@ -34,28 +29,11 @@ import { RepoService } from '../../services/repo.service';
   `,
 })
 export class ListComponent {
-  filmaRepo = inject(RepoService);
-  films: Film[] = [];
-  data = structuredClone(this.films);
+  filmsState = inject(StateService);
+  films = this.filmsState.getFilms();
 
-  constructor() {
-    this.filmaRepo.loadFilms().then((films) => {
-      this.films = films;
-    });
-  }
-
-  deleteFilm(id: string) {
-    this.films = this.films.filter((film) => film.id !== id);
-  }
-
-  addFilm(film: Film) {
-    this.films = [...this.films, film];
-  }
-  updateFilm(film: Film) {
-    this.films = this.films.map((f) =>
-      f.id === film.id
-        ? { ...f, title: film.title, releaseYear: film.releaseYear }
-        : f,
-    );
-  }
+  // films: WritableSignal<Film[]>;
+  //constructor() {
+  // this.films = this.filmsState.getFilms();
+  //}
 }
