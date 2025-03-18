@@ -7,9 +7,9 @@ import { UserService } from '../../services/user.service';
   imports: [FormsModule],
   template: ` <h3>Login</h3>
     <form (ngSubmit)="onSubmit()">
-      <label for="email">Email</label>
+      <label for="email">User email</label>
       <input
-        type="text"
+        type="email"
         id="email"
         [(ngModel)]="user.email"
         name="email"
@@ -17,7 +17,7 @@ import { UserService } from '../../services/user.service';
       />
       <label for="password">Password</label>
       <input
-        type="text"
+        type="password"
         id="password"
         [(ngModel)]="user.password"
         name="password"

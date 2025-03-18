@@ -1,9 +1,9 @@
+/* eslint-disable @typescript-eslint/consistent-type-definitions */
 import { inject, Injectable } from '@angular/core';
-import { Film } from '../types/film';
+import { Film } from '../../core/types/film';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
 import { UserService } from '../../user/services/user.service';
-import { Token } from '@angular/compiler';
 
 type ApiResponse = {
   results: Film[];
@@ -19,7 +19,6 @@ export class RepoService {
   userService = inject(UserService);
 
   loadFilms(): Observable<Film[]> {
-    console.log(this.userService, Token);
     return this.httpClient
       .get<ApiResponse>(this.url)
       .pipe(map((r) => r.results));
@@ -36,19 +35,74 @@ export class RepoService {
     return this.httpClient
       .post<ApiResponse>(this.url, film, {
         headers: {
-          Authorization: 'Bearer ${this.userService.token}',
+          Authorization: `Bearer ${this.userService.token}`,
+        },
+      })
+      .pipe(map((r) => r.results[0]));
+  }
+  updateFilm(film: Film): Observable<Film> {
+    film.description = 'Created by Angular';
+    film.director = 'Director';
+    film.rating = 5;
+    film.poster = 'https://via.placeholder.com/150';
+    film.categories = ['Action'];
+    film.duration = 120;
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { id, categories, ...rest } = film;
+    return this.httpClient
+      .patch<ApiResponse>(`${this.url}/${id}`, rest, {
+        headers: {
+          Authorization: `Bearer ${this.userService.token}`,
         },
       })
       .pipe(map((r) => r.results[0]));
   }
 
-  // updateFilm(film: Film): Observable<Film> {
-  //   film.description = 'Created by Angular';
-  //   film.director = 'Director';
-  //   film.rating = 5;
-  //   film.poster = 'https://via.placeholder.com/150';
-  //   film.categories = ['Action'];
-  //   film.duration = 120;
-
-  //   return this.httpClient.put<ApiResponse
+  deleteFilm(id: string): Observable<void> {
+    return this.httpClient.delete<void>(`${this.url}/${id}`, {
+      headers: {
+        Authorization: `Bearer ${this.userService.token}`,
+      },
+    });
+  }
 }
+
+// export class RepoServiceFetch {
+//   url = 'http://localhost:3000/api/films';
+
+//   async loadFilms(): Promise<Film[]> {
+//     const response = await fetch(this.url);
+//     const results: ApiResponse = await response.json();
+//     console.log(results.results);
+//     return results.results;
+//   }
+
+//   createFilm(film: Film): Promise<Film> {
+//     return fetch(this.url, {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify(film),
+//     })
+//       .then((response) => response.json())
+//       .then((result) => {
+//         console.log('Film created', result);
+//         return result;
+//       });
+//   }
+
+//   // loadFilms(): Promise<Film[]> {
+//   //   return new Promise((resolve) => {
+//   //     setTimeout(() => {
+//   //       resolve(FILMS);
+//   //       console.log('Films loaded from API');
+//   //     }, 2000);
+//   //   });
+//   // }
+
+//   // async loadFilms(): Promise<Film[]> {
+//   //   return FILMS
+//   // }
+// }

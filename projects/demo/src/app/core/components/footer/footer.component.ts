@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   imports: [DatePipe],
   template: `
     <p>{{ today.toLocaleDateString() }} - {{ today.toLocaleTimeString() }}</p>
+    <!-- <p>{{ today | date: 'fullDate' : '' : 'es' }}</p> -->
     <p>{{ today | date: 'fullDate' }}</p>
   `,
   styles: `

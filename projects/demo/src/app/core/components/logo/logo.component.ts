@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'cas-logo',
+  imports: [],
   templateUrl: './logo.svg',
   styles: `
     :host {

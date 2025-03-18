@@ -4,8 +4,8 @@ import {
   provideZoneChangeDetection,
 } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
+import { registerLocaleData } from '@angular/common';
 
 registerLocaleData(localeEs);
 

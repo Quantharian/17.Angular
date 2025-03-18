@@ -1,15 +1,19 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'cas-greetings',
+  selector: 'cas-greeting',
   imports: [FormsModule],
   template: `
-    <div>
-      <input [(ngModel)]="name" placeholder="Enter your name" />
-      <button (click)="clearName()">Borrar</button>
-      <p>Hola {{ name ? name : 'amigo' }}!</p>
-    </div>
+    <p>Hola {{ user || 'amigo' }}</p>
+    <!-- <input
+      type="text"
+      placeholder="Escribe tu nombre"
+      [value]="user"
+      (input)="setUserName($event)"
+    /> -->
+    <input type="text" placeholder="Escribe tu nombre" [(ngModel)]="user" />
+    <button (click)="clean()">Borrar</button>
   `,
   styles: `
     :host {
@@ -21,9 +25,13 @@ import { FormsModule } from '@angular/forms';
   `,
 })
 export class GreetingComponent {
-  @Input() name = '';
-
-  clearName() {
-    this.name = '';
+  user = '';
+  clean() {
+    this.user = '';
   }
+
+  // setUserName(event: Event) {
+  //   const target: HTMLInputElement = event.target as HTMLInputElement;
+  //   this.user = target.value;
+  // }
 }
