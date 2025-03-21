@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/consistent-type-definitions */
 import { inject, Injectable } from '@angular/core';
 import { Film } from '../../core/types/film';
 import { HttpClient } from '@angular/common/http';
@@ -24,6 +23,11 @@ export class RepoService {
       .pipe(map((r) => r.results));
   }
 
+  getFilmById(id: string): Observable<Film[]> {
+    const url = `${this.url}/${id}`;
+    return this.httpClient.get<ApiResponse>(url).pipe(map((r) => r.results));
+  }
+
   createFilm(film: Omit<Film, 'id'>): Observable<Film> {
     film.description = 'Created by Angular';
     film.director = 'Director';
@@ -35,7 +39,7 @@ export class RepoService {
     return this.httpClient
       .post<ApiResponse>(this.url, film, {
         headers: {
-          Authorization: `Bearer ${this.userService.token}`,
+          Authorization: `Bearer ${this.userService.token()}`,
         },
       })
       .pipe(map((r) => r.results[0]));
@@ -53,7 +57,7 @@ export class RepoService {
     return this.httpClient
       .patch<ApiResponse>(`${this.url}/${id}`, rest, {
         headers: {
-          Authorization: `Bearer ${this.userService.token}`,
+          Authorization: `Bearer ${this.userService.token()}`,
         },
       })
       .pipe(map((r) => r.results[0]));
@@ -62,7 +66,7 @@ export class RepoService {
   deleteFilm(id: string): Observable<void> {
     return this.httpClient.delete<void>(`${this.url}/${id}`, {
       headers: {
-        Authorization: `Bearer ${this.userService.token}`,
+        Authorization: `Bearer ${this.userService.token()}`,
       },
     });
   }
