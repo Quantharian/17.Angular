@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import FilmDetailComponent from './film.detail.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RepoService } from './services/repo.service';
+import { StateService } from './services/state.service';
 
 describe('FilmDetailComponent', () => {
   let component: FilmDetailComponent;
@@ -8,7 +11,8 @@ describe('FilmDetailComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FilmDetailComponent],
+      imports: [FilmDetailComponent, HttpClientModule],
+      providers: [RepoService, StateService],
     }).compileComponents();
 
     fixture = TestBed.createComponent(FilmDetailComponent);
