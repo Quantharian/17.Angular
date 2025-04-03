@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component } from "@angular/core";
+import { CommonModule } from "@angular/common";
 
 @Component({
-  selector: 'cas-counter',
+  selector: "cas-counter",
   imports: [CommonModule],
   template: `
     <h3>Counter</h3>

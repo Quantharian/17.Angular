@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ContadorComponent } from './contador.component';
+import { CounterComponent } from './contador.component';
 
 describe('ContadorComponent', () => {
-  let component: ContadorComponent;
-  let fixture: ComponentFixture<ContadorComponent>;
+  let component: CounterComponent;
+  let fixture: ComponentFixture<CounterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ContadorComponent]
-    })
-    .compileComponents();
+      imports: [CounterComponent],
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(ContadorComponent);
+    fixture = TestBed.createComponent(CounterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
