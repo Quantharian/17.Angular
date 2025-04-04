@@ -4,8 +4,8 @@ import { UserService } from './user/services/user.service';
 import { HttpClientModule } from '@angular/common/http';
 
 describe('AppComponent', () => {
-  let component: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
+  let component: AppComponent;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({

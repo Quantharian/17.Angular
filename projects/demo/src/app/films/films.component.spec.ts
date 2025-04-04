@@ -1,9 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import FilmsComponent from './films.component';
-import { HttpClientModule } from '@angular/common/http';
 import { StateService } from './services/state.service';
 import { RepoService } from './services/repo.service';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('FilmsComponent', () => {
   let component: FilmsComponent;

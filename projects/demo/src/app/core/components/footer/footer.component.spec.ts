@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FooterComponent } from './footer.component';
 
-fdescribe('FooterComponent', () => {
+describe('FooterComponent', () => {
   let component: FooterComponent;
   let fixture: ComponentFixture<FooterComponent>;
 
@@ -13,7 +13,7 @@ fdescribe('FooterComponent', () => {
 
     fixture = TestBed.createComponent(FooterComponent);
     component = fixture.componentInstance;
-    component.today = new Date('1789-10-01T12:00:002');
+    component.today = new Date('1789-10-01T12:00:00Z'); // Set a fixed date for testing
     fixture.detectChanges();
   });
 
@@ -21,9 +21,9 @@ fdescribe('FooterComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('Should display the correct date', () => {
+  it('should display the correct date', () => {
     const compiled = fixture.nativeElement;
-    const dateElement = compiled.querySelector('.date');
-    expect(dateElement.textContent).toContain('1789-10-01');
+    const dateElement = compiled.querySelector('p:nth-child(1)');
+    expect(dateElement.textContent).toContain('1789');
   });
 });

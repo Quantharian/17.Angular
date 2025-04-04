@@ -1,15 +1,15 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AddEditComponent } from './add.edit.component';
-import { HttpClientModule } from '@angular/common/http';
 import { StateService } from '../../services/state.service';
 import { RepoService } from '../../services/repo.service';
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentRef } from '@angular/core';
 
-describe('AddComponent', () => {
+describe('AddEditComponent', () => {
   let component: AddEditComponent;
-  let fixture: ComponentFixture<AddEditComponent>;
   let componentRef: ComponentRef<AddEditComponent>;
+  let fixture: ComponentFixture<AddEditComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({

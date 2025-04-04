@@ -19,7 +19,7 @@ import { UserService } from '../../../user/services/user.service';
         }
         @if (isLogin()) {
           <li>
-            <a [routerLink]="'/profile'">Profile</a>
+            <a [routerLink]="'/user'">Profile</a>
           </li>
           <li>
             <a (click)="logout($event)" href="/">Logout</a>
@@ -60,8 +60,8 @@ import { UserService } from '../../../user/services/user.service';
 })
 export class MenuComponent {
   // @Input() items: MenuItem[] = [];
-  items = input<MenuItem[]>();
-  userService = inject(UserService);
+  items = input.required<MenuItem[]>();
+  private userService = inject(UserService);
   router = inject(Router);
   isLogin = computed(() => this.userService.token() !== null);
 

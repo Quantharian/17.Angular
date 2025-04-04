@@ -3,10 +3,10 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AddEditComponent } from './add.edit.component';
 import { ComponentRef } from '@angular/core';
 
-describe('AddComponent', () => {
+describe('AddEditComponent from series', () => {
   let component: AddEditComponent;
-  let fixture: ComponentFixture<AddEditComponent>;
   let componentRef: ComponentRef<AddEditComponent>;
+  let fixture: ComponentFixture<AddEditComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({

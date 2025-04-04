@@ -1,6 +1,15 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import ProfileComponent from './profile.component';
+import { UserLogged, UserService } from './services/user.service';
+import { computed } from '@angular/core';
+
+const mockUser: UserLogged = {} as UserLogged;
+
+const mockUserService = {
+  currentUser: computed(() => mockUser),
+  getUserById: (id: number) => ({ ...mockUser, id }),
+};
 
 describe('ProfileComponent', () => {
   let component: ProfileComponent;
@@ -9,6 +18,7 @@ describe('ProfileComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [ProfileComponent],
+      providers: [{ UserService, useValue: mockUserService }],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ProfileComponent);
