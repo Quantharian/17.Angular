@@ -37,3 +37,25 @@ magnet:?xt=urn:btih:BD03D762DDBAFF2D3CAD6DCEC531FF40A15A376F&dn=EPL_Rama_II&tr=u
 magnet:?xt=urn:btih:9682241D1909C820A5B3BCB3E0484A2092FB2D0E&dn=EPL_El_jardin_de_Rama&tr=udp://tracker.opentrackr.org:1337/announce&tr=udp://www.torrent.eu.org:451/announce&tr=udp://exodus.desync.com:6969/announce&tr=udp://p4p.arenabg.ch:1337/announce&tr=udp://tracker.internetwarriors.net:1337/announce
 
 magnet:?xt=urn:btih:61646B2FE0810924466BC140E1F9B67A1706041C&dn=EPL_Rama_revelada&tr=udp://tracker.opentrackr.org:1337/announce&tr=udp://www.torrent.eu.org:451/announce&tr=udp://exodus.desync.com:6969/announce&tr=udp://p4p.arenabg.ch:1337/announce&tr=udp://tracker.internetwarriors.net:1337/announce
+
+magnet:?xt=urn:btih:FFD20D7F9AD1C81102128342C15263CBE6BC2ECE&dn=EPL_Metro_2033&tr=udp://tracker.opentrackr.org:1337/announce&tr=udp://www.torrent.eu.org:451/announce&tr=udp://exodus.desync.com:6969/announce&tr=udp://p4p.arenabg.ch:1337/announce&tr=udp://tracker.internetwarriors.net:1337/announce
+
+magnet:?xt=urn:btih:B30AA8AD35FE2F2068F7AC733AD2CA2C6B5A2601&dn=EPL_Metro_2034&tr=udp://tracker.opentrackr.org:1337/announce&tr=udp://www.torrent.eu.org:451/announce&tr=udp://exodus.desync.com:6969/announce&tr=udp://p4p.arenabg.ch:1337/announce&tr=udp://tracker.internetwarriors.net:1337/announce
+
+magnet:?xt=urn:btih:FDEDDFE0AB0CACB40AE1500A3F954B4DDC9F765F&dn=EPL_Futu.re&tr=udp://tracker.opentrackr.org:1337/announce&tr=udp://www.torrent.eu.org:451/announce&tr=udp://exodus.desync.com:6969/announce&tr=udp://p4p.arenabg.ch:1337/announce&tr=udp://tracker.internetwarriors.net:1337/announce
+
+magnet:?xt=urn:btih:1FB6A3574E0FCF15885A6B58D89845575AC5CF0B&dn=EPL_Metro_2035&tr=udp://tracker.opentrackr.org:1337/announce&tr=udp://www.torrent.eu.org:451/announce&tr=udp://exodus.desync.com:6969/announce&tr=udp://p4p.arenabg.ch:1337/announce&tr=udp://tracker.internetwarriors.net:1337/announce
+
+magnet:?xt=urn:btih:45E01E39452A441953C4102ABC7537C35837D27D&dn=EPL_Outpost_n.o_01&tr=udp://tracker.opentrackr.org:1337/announce&tr=udp://www.torrent.eu.org:451/announce&tr=udp://exodus.desync.com:6969/announce&tr=udp://p4p.arenabg.ch:1337/announce&tr=udp://tracker.internetwarriors.net:1337/announce
+
+magnet:?xt=urn:btih:3B6B4DEC2E2D325046EEAA0838084D5EE546AA33&dn=EPL_Outpost_n.o_02&tr=udp://tracker.opentrackr.org:1337/announce&tr=udp://www.torrent.eu.org:451/announce&tr=udp://exodus.desync.com:6969/announce&tr=udp://p4p.arenabg.ch:1337/announce&tr=udp://tracker.internetwarriors.net:1337/announce
+
+magnet:?xt=urn:btih:AF390EFDA1CE1B5CF3D3EB43843086A8C838EE02&dn=EPL_San_Petersburgo&tr=udp://tracker.opentrackr.org:1337/announce&tr=udp://www.torrent.eu.org:451/announce&tr=udp://exodus.desync.com:6969/announce&tr=udp://p4p.arenabg.ch:1337/announce&tr=udp://tracker.internetwarriors.net:1337/announce
+
+magnet:?xt=urn:btih:60B917DA95007B038C1FD58642D8F1CB73338CAE&dn=EPL_Hacia_la_luz&tr=udp://tracker.opentrackr.org:1337/announce&tr=udp://www.torrent.eu.org:451/announce&tr=udp://exodus.desync.com:6969/announce&tr=udp://p4p.arenabg.ch:1337/announce&tr=udp://tracker.internetwarriors.net:1337/announce
+
+magnet:?xt=urn:btih:0B539A7143FE2437D38F17EAE65BF3FD72249650&dn=EPL_Medio_rey&tr=udp://tracker.opentrackr.org:1337/announce&tr=udp://www.torrent.eu.org:451/announce&tr=udp://exodus.desync.com:6969/announce&tr=udp://p4p.arenabg.ch:1337/announce&tr=udp://tracker.internetwarriors.net:1337/announce
+
+magnet:?xt=urn:btih:B105EBCB6ABAF1A3AF0D8085F1BEFA8FB12C5B16&dn=EPL_Medio_mundo&tr=udp://tracker.opentrackr.org:1337/announce&tr=udp://www.torrent.eu.org:451/announce&tr=udp://exodus.desync.com:6969/announce&tr=udp://p4p.arenabg.ch:1337/announce&tr=udp://tracker.internetwarriors.net:1337/announce
+
+magnet:?xt=urn:btih:5E33E4A67CC65E677CD4469EC0FDDB8835BE4A24&dn=EPL_Media_guerra&tr=udp://tracker.opentrackr.org:1337/announce&tr=udp://www.torrent.eu.org:451/announce&tr=udp://exodus.desync.com:6969/announce&tr=udp://p4p.arenabg.ch:1337/announce&tr=udp://tracker.internetwarriors.net:1337/announce
