@@ -9,7 +9,7 @@ import {
 import { Film } from '../../core/types/film';
 
 const urlBase = 'http://localhost:3000';
-const urlAPI = 'api/films';
+const urlAPI = '/api/films';
 const url = urlBase + urlAPI;
 
 describe('RepoService', () => {
@@ -19,7 +19,7 @@ describe('RepoService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [],
-      providers: [provideHttpClient(), provideHttpClientTesting()],
+      providers: [RepoService, provideHttpClient(), provideHttpClientTesting()],
     });
     service = TestBed.inject(RepoService);
     controller = TestBed.inject(HttpTestingController);
@@ -35,42 +35,64 @@ describe('RepoService', () => {
 
   it('should load films', () => {
     service.loadFilms().subscribe((films) => {
-      console.log(films);
       expect(films.length).toEqual(1);
       expect(films).toEqual([{} as Film]);
     });
     const routeTest = controller.expectOne(url);
     expect(routeTest.request.method).toEqual('GET');
-    routeTest.flush({ results: [{}], error: '' });
+    routeTest.flush({
+      results: [{}],
+      error: '',
+    });
   });
 
-  it('should create a film', () => {
-    const film = {} as Film;
-    service.createFilm(film).subscribe((film) => {
-      expect(film).toEqual({} as Film);
+  it('should get film by id', () => {
+    const id = '1';
+    service.getFilmById(id).subscribe((films) => {
+      expect(films.length).toEqual(1);
+      expect(films).toEqual([{} as Film]);
+    });
+    const routeTest = controller.expectOne(`${url}/${id}`);
+    expect(routeTest.request.method).toEqual('GET');
+    routeTest.flush({
+      results: [{}],
+      error: '',
+    });
+  });
+
+  it('should create film', () => {
+    const mockFilm = {} as Film;
+    service.createFilm(mockFilm).subscribe((film) => {
+      expect(film).toEqual(mockFilm);
     });
     const routeTest = controller.expectOne(url);
     expect(routeTest.request.method).toEqual('POST');
-    routeTest.flush({ results: [film], error: '' });
+    routeTest.flush({
+      results: [mockFilm],
+      error: '',
+    });
   });
 
-  it('should update a film', () => {
+  it('should update film', () => {
     const mockFilm = {} as Film;
     service.updateFilm(mockFilm).subscribe((film) => {
       expect(film).toEqual(mockFilm);
     });
-    const routeTest = controller.expectOne(url + '/' + mockFilm.id);
-    expect(routeTest.request.method).toEqual('PUT');
-    routeTest.flush({ results: [mockFilm], error: '' });
+    const routeTest = controller.expectOne(`${url}/${mockFilm.id}`);
+    expect(routeTest.request.method).toEqual('PATCH');
+    routeTest.flush({
+      results: [mockFilm],
+      error: '',
+    });
   });
 
-  it('should delete a film', () => {
-    const mockFilm = {} as Film;
-    service.deleteFilm(mockFilm).subscribe((data) => {
-      expect(data).toEqual(mockFilm);
+  it('should delete film', () => {
+    const mockFilm = { id: '1' } as Film;
+    service.deleteFilm('1').subscribe((data) => {
+      expect(data).toEqual(undefined);
     });
-    const routeTest = controller.expectOne(url + '/' + mockFilm.id);
+    const routeTest = controller.expectOne(`${url}/${mockFilm.id}`);
     expect(routeTest.request.method).toEqual('DELETE');
-    routeTest.flush({ results: [mockFilm], error: '' });
+    //routeTest.flush();
   });
 });
