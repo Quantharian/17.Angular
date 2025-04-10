@@ -59,3 +59,9 @@ magnet:?xt=urn:btih:0B539A7143FE2437D38F17EAE65BF3FD72249650&dn=EPL_Medio_rey&tr
 magnet:?xt=urn:btih:B105EBCB6ABAF1A3AF0D8085F1BEFA8FB12C5B16&dn=EPL_Medio_mundo&tr=udp://tracker.opentrackr.org:1337/announce&tr=udp://www.torrent.eu.org:451/announce&tr=udp://exodus.desync.com:6969/announce&tr=udp://p4p.arenabg.ch:1337/announce&tr=udp://tracker.internetwarriors.net:1337/announce
 
 magnet:?xt=urn:btih:5E33E4A67CC65E677CD4469EC0FDDB8835BE4A24&dn=EPL_Media_guerra&tr=udp://tracker.opentrackr.org:1337/announce&tr=udp://www.torrent.eu.org:451/announce&tr=udp://exodus.desync.com:6969/announce&tr=udp://p4p.arenabg.ch:1337/announce&tr=udp://tracker.internetwarriors.net:1337/announce
+
+magnet:?xt=urn:btih:F43D9FF8C05046275EED84A2E20D9D5B5588E109&dn=EPL*Neuromante*(trad.\_Tejera_Exposito)&tr=udp://tracker.opentrackr.org:1337/announce&tr=udp://www.torrent.eu.org:451/announce&tr=udp://exodus.desync.com:6969/announce&tr=udp://p4p.arenabg.ch:1337/announce&tr=udp://tracker.internetwarriors.net:1337/announce
+
+magnet:?xt=urn:btih:4FC096B88052D93C7549D0746B078B31FF9D08C4&dn=EPL*Conde_Cero*(trad.\_Tejera_Exposito)&tr=udp://tracker.opentrackr.org:1337/announce&tr=udp://www.torrent.eu.org:451/announce&tr=udp://exodus.desync.com:6969/announce&tr=udp://p4p.arenabg.ch:1337/announce&tr=udp://tracker.internetwarriors.net:1337/announce
+
+magnet:?xt=urn:btih:879C2DFEA710C13E25B3D71548E1711FBE959B2C&dn=EPL*Mona_Lisa_acelerada*(trad.\_Tejera_Exposito)&tr=udp://tracker.opentrackr.org:1337/announce&tr=udp://www.torrent.eu.org:451/announce&tr=udp://exodus.desync.com:6969/announce&tr=udp://p4p.arenabg.ch:1337/announce&tr=udp://tracker.internetwarriors.net:1337/announce
